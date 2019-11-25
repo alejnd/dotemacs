@@ -50,3 +50,4 @@ flycheck_*.el
 .python-environments
 private
 elpy/rpc-venv
+semanticdb
