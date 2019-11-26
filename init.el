@@ -134,7 +134,8 @@
 
 (load-theme 'monokai-pro t)
 
-;;intentation guides
-;;(require 'highlight-indentation)
+
+;; highligths
+(setq-default show-trailing-whitespace t)
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "color-60")
