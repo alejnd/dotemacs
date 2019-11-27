@@ -25,6 +25,10 @@
 ;; no startup msg
 (setq inhibit-startup-message t)
 
+;; Avoid open new buffers while open dirs
+(put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+
 ;;Return nill if buffer is not sutable for switch
 (defun pc-bufsw::can-work-buffer (buffer)
   (let ((name (buffer-name buffer)))
