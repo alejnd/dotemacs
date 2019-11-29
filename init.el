@@ -27,7 +27,8 @@
 
 ;; Avoid open new buffers while open dirs
 (put 'dired-find-alternate-file 'disabled nil)
-(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+(eval-after-load "dired" '(progn
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ))
 
 ;;Return nill if buffer is not sutable for switch
 (defun pc-bufsw::can-work-buffer (buffer)
@@ -49,7 +50,7 @@
      (define-key elpy-mode-map (kbd key) nil)))
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;;(setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-show-auto-change-root t)
 (setq neotree-show t)
 
@@ -69,7 +70,7 @@
 (powerline-default-theme)
 
 (use-package airline-themes)
-(load-theme 'airline-molokai)
+(load-theme 'airline-molokai t)
 
 (require 'tabbar-tweak)
 
@@ -98,7 +99,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  ;;'(shell-pop-default-directory "/Users/kyagi/git")
- '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (eshell shell-pop-term-shell)))))
+ '(shell-pop-shell-type (quote ("ansi-term" "*term*" (lambda nil (eshell shell-pop-term-shell)))))
  '(shell-pop-term-shell "/bin/bash")
  '(shell-pop-universal-key "C-t")
  '(shell-pop-window-size 40)

@@ -40,12 +40,12 @@
   ("C-x C-f" . counsel-find-file)
   ("C-x c k" . counsel-yank-pop))
 
-(use-package counsel-projectile
-  :bind
-  ("C-x v" . counsel-projectile)
-  ("C-x c p" . counsel-projectile-ag)
-  :config
-  (counsel-projectile-on))
+;;(use-package counsel-projectile
+;;  :bind
+;;  ("C-x v" . counsel-projectile)
+;;  ("C-x c p" . counsel-projectile-ag)
+;;  :config
+;;  (counsel-projectile-on))
 
 (use-package ivy
   :bind
@@ -68,9 +68,9 @@
 
 (use-package magit
   :config
-  
+
   (setq magit-completing-read-function 'ivy-completing-read)
-  
+
   :bind
   ;; Magic
   ("C-x g s" . magit-status)
@@ -106,11 +106,11 @@
   ("C-c l" . org-store-link)
   ("C-c a" . org-agenda))
 
-(use-package org-projectile
-  :config
-  (org-projectile-per-project)
-  (setq org-projectile-per-project-filepath "todo.org"
-	org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+;; (use-package org-projectile
+;;   :config
+;;   (org-projectile-per-project)
+;;   (setq org-projectile-per-project-filepath "todo.org"
+;;     org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 (use-package org-bullets
   :config
@@ -121,14 +121,14 @@
 
 (use-package page-break-lines)
 
-(use-package projectile
-  :config
-  (setq projectile-known-projects-file
-        (expand-file-name "projectile-bookmarks.eld" temp-dir))
-  
-  (setq projectile-completion-system 'ivy)
-  
-  (projectile-global-mode))
+;; (use-package projectile
+;;   :config
+;;   (setq projectile-known-projects-file
+;;         (expand-file-name "projectile-bookmarks.eld" temp-dir))
+
+;;  (setq projectile-completion-system 'ivy)
+
+;;  (projectile-global-mode))
 
 (use-package recentf
   :config
