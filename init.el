@@ -64,8 +64,13 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+
 (use-package powerline)
 (powerline-default-theme)
+
+(use-package airline-themes)
+(load-theme 'airline-molokai)
+
 (require 'tabbar-tweak)
 
  (defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
