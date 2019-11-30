@@ -141,8 +141,8 @@
 (drag-stuff-define-keys)
 
 ;; theme
-
-(load-theme 'monokai-pro t)
+(use-package gruvbox-theme)
+(load-theme 'gruvbox-dark-hard t)
 
 
 ;; highligths
